@@ -1,48 +1,42 @@
 ## Test Cases:
 
 ```python
-# None value
-print(sort(149,149,149, None))
+# None input
 
-# 0 or negative values
-print(sort(149,149,149, 0))
-print(sort(149,149,-1, 10))
+assert sort(149,149,149, None) is None
+
+# 0 or negative value input
+
+assert sort(149,149,149, 0) is None
+
+assert sort(149,149,-1, 15) is None
 
 # standard
-print(sort(149,149,10, 15))
+assert sort(149,149,10, 15) == "STANDARD"
 
 # special
-# 1 dim beyond 150
-print(sort(150,149,10, 15))
-# mass >= 20
-print(sort(49,49,49, 150))
-# volumn >= 1M
-print(sort(100,100,100, 10))
 
-# reject
-# both (all 3)
-print(sort(100,100,150, 40))
+# 1 dim beyond 150
+assert sort(150,149,10, 15) == "SPECIAL"
+
+# mass >= 20
+assert sort(49,49,49, 20) == "SPECIAL"
+assert sort(49,49,49, 120) == "SPECIAL"
+
+# volumn >= 1M
+assert sort(100,100,100, 10) == "SPECIAL"
+
+# rejected
+
+# both
+assert sort(100,100,150, 40) == "REJECTED"
+
 ```
 
 ## Output
 
 ```
 no input can be None
-None
-
 all input must be larger than 0
-None
-
 all input must be larger than 0
-None
-
-STANDARD
-
-SPECIAL
-
-SPECIAL
-
-SPECIAL
-
-REJECTED
 ```
