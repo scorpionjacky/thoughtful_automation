@@ -5,6 +5,10 @@
 
 assert sort(149,149,149, None) is None
 
+# parameters must all be integers
+
+assert sort(100,100,150, '') is None
+
 # 0 or negative value input
 
 assert sort(149,149,149, 0) is None
@@ -37,6 +41,7 @@ assert sort(100,100,150, 40) == "REJECTED"
 
 ```
 no input can be None
+all input must be integer type
 all input must be larger than 0
 all input must be larger than 0
 ```
